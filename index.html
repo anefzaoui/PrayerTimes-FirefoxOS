@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Prayer Times</title>
+<meta charset="utf-8">
+<script type="text/javascript" src="js/PrayTimes.js"></script> 
+<script type="text/javascript" src="js/settings.js"></script> 
+<script type="text/javascript" src="js/utils.js"></script>
+<script type="text/javascript" src="js/local_data.js"></script>
+<link rel="stylesheet" href="style/style.css">
+<link rel="stylesheet" href="style/fonts/sahlnaskh.css">
+
+<link href="shared/style_unstable/toolbars.css" rel="stylesheet" type="text/css">
+<link href="shared/fonts.css" rel="stylesheet" type="text/css">
+<link href="shared/icons/styles/action_icons.css" rel="stylesheet" type="text/css">
+</head>
+<body id="Roots" role="application">
+<section id="main">
+<header>
+<div class="menu"><a id="settingsWindow" href="#"></a></div>
+<h1>Prayer Times</h1>
+</header>
+
+<div class="board" id="board">
+<div class="now" id="now"></div>
+<div id="timer">{h} hour and {m} minutes for Asr</div>
+<div class="item" id="item">
+<div id="name">Fajr</div>
+<div class="time" id="fajr">00:00</div>
+</div>
+
+<div class="item" id="item">
+<div id="name">Dhuhr</div>
+<div class="time" id="dhuhr">00:00</div>
+</div>
+
+<div class="item" id="item">
+<div id="name">Asr</div>
+<div class="time" id="asr">00:00</div>
+</div>
+
+<div class="item" id="item">
+<div id="name">Maghreb</div>
+<div class="time" id="maghrib">00:00</div>
+</div>
+
+<div class="item" id="item">
+<div id="name">Isha'a</div>
+<div class="time" id="isha">00:00</div>
+</div>
+
+
+</div>
+<div role="toolbar">
+  <ul>
+    <li><button id="refresh" class="pack-icon-gps">Locate</button></li>
+  </ul>
+  <ul>
+    <li><button class="action-icon email-flag">Flag</button></li>
+    <li><button class="action-icon email-markread">Mark read</button></li>
+    <li><button class="action-icon move">Move</button></li>
+  </ul>
+</div>
+</section>
+<!--<section id="settings">
+<header>
+<a class="back" href="#"></a>
+<h1>Settings</h1>
+</header>
+</section>-->
+</body>
+</html>

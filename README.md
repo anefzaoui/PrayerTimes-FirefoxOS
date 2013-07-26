@@ -1,4 +1,4 @@
-PrayerTimes-FirefoxOS
-=====================
+Prayer Times App
+========
 
-Prayer Times App for Firefox OS
+For Firefox OS, App that shows Prayer times.

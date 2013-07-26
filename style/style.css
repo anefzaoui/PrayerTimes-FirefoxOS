@@ -1,0 +1,222 @@
+html,body {
+  margin: 0;
+  padding: 0;
+  font-size: 10px;
+  overflow: auto;
+  
+}
+section{
+width:100%;
+display:block;
+height:100%;
+position:absolute;
+top:0;
+background-color:rgb(238, 238, 238);
+}
+section>header{
+display:block;
+width:100%;
+height:5rem;
+background: -moz-linear-gradient(top, #299a0b 0%, #299a0b 100%);
+box-shadow:0px 1px 2px 0px rgb(0, 0, 0);
+position:fixed;
+top:0;
+}
+section>header>h1{
+color:white;
+font-size:2.2rem;
+margin-left:4rem;
+margin-top:1.9rem;
+line-height:1.5rem;
+}
+section>header>.menu{
+float:right;
+height:5rem;
+width:5rem;
+display:block;
+
+}
+section>header>.back{
+float:left;
+height:5rem;
+width:3.5rem;
+display:block;
+display:inline-block;
+background-image:url("images/back.png");
+text-decoration:none;
+background-position:center;
+background-repeat:no-repeat;
+}
+section>header>.back:active{
+background-color:#8fc400;
+background-image:url("images/back.png");
+}
+section>header>.menu>a{
+height:5rem;
+width:100%;
+display:inline-block;
+background-image:url("images/settings.png");
+text-decoration:none;
+background-position:center;
+background-repeat:no-repeat;
+}
+@keyframes openApp {
+0% { transform: translateX(-100%); opacity: 1; }
+100% { transform: translateX(0%);; opacity: 1; }
+}
+@keyframes closeApp {
+0% { transform: translateX(0%); opacity: 1; }
+100% { transform: translateX(-100%); opacity: 1; }
+}
+#mysettings{
+z-index:2;
+}
+#main{
+z-index:1;
+}
+.OpenPostAnim{
+animation: openApp 0.3s forwards ease;
+}
+.ClosePostAnim{
+animation:closeApp 0.9s forwards ease;
+}
+/*
+#settings:target{
+animation: openApp 0.9s alternate forwards ease;
+}
+*/
+.loadingIcon {
+  width: 2.9rem;
+  height: 2.9rem;
+  background: url("images/spinner.png") no-repeat left top / 38rem ;
+  border: medium none;
+  animation: 1s steps(10, end) 0s normal none infinite moveDefault;
+  display: block;
+  position: absolute;
+  top: calc((100% - 2.9rem) / 2);
+  left: calc((100% - 2.9rem) / 2);
+}
+
+@keyframes moveDefault {
+  from {
+    background-position: 0 top;
+  }
+
+  to {
+    background-position: -39rem top;
+  }
+}
+#board{
+width:calc(100% - 4rem);
+display:block;
+min-height:4rem;
+margin:8rem auto 0 auto;
+}
+#Largeboard{
+width:calc(100% - .4rem);
+display:block;
+min-height:4rem;
+margin:8rem auto 0 auto;
+}
+#board>#item{
+box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
+display:block;
+margin:1rem auto;
+min-height:4rem;
+background-color:white;
+}
+#board>#item>#name{
+float:left;
+font-size:2rem;
+display:inline-block;
+color:rgb(100,100,100);
+margin:.9rem 0 0 1rem;
+}
+#board>#item>.time{
+float:right;
+font-size:2rem;
+display:inline-block;
+color:rgb(100,100,100);
+margin:.9rem 1rem 0 0;
+}
+.now,
+#timer{
+font-size:1.7rem;
+display:block;
+margin:.2rem auto;
+text-shadow: 0px 1px 0px rgba(1, 0, 3, .1);
+font-weight: 300;
+color:rgb(70,70,70);
+}
+#searchForm{
+display:block;
+width:100%;
+}
+
+#searchPlaces{
+display:inline-block;
+width:calc(100% - 8rem);
+margin:0 auto;
+border:1px solid rgb(190,190,190);
+border-radius:2px 2px 2px 2px;
+height:3rem;
+color:rgb(110,110,110);
+}
+#searchMe{
+text-decoration:none;
+display:inline-block;
+width:4rem;
+margin:0 auto;
+border:1px solid white;
+border-radius:0 0 0 0;
+height:3rem;
+}
+
+
+[role="toolbar"] .pack-icon-gps {
+      background-image: url(images/Icon_Geolocation.png);
+    }
+@media screen and (min-width: 768px){
+#board{
+width:calc(100% - 4rem);
+display:block;
+min-height:4rem;
+margin:8rem auto 0 auto;
+}
+#board>#item{
+width:calc((100% - 7rem) / 5);
+height:14rem;
+box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+display:inline-block;
+margin:1rem .5rem;
+min-height:4rem;
+position:relative;
+}
+#board>#item>#name{
+position:absolute;
+top:1rem;
+font-size:2rem;
+display:block;
+color:rgb(100,100,100);
+}
+#board>#item>.time{
+position:absolute;
+left:1rem;
+bottom:1rem;
+font-size:2rem;
+display:block;
+color:rgb(100,100,100);
+
+}
+.now,
+#timer{
+font-size:2.5rem;
+display:block;
+color:rgb(100,100,100);
+margin:1rem auto;
+text-shadow: 0px 1px 0px rgba(1, 0, 3, .1);
+font-weight: 300;
+color:rgb(70,70,70);
+}
+
+}
