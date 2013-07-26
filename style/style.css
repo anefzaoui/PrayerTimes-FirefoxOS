@@ -173,8 +173,12 @@ height:3rem;
 }
 
 
-[role="toolbar"] .pack-icon-gps {
+	[role="toolbar"] .pack-icon-gps {
       background-image: url(images/Icon_Geolocation.png);
+    }
+
+	[role="toolbar"] .pack-icon-menu {
+      background-image: url(images/menu.png);
     }
 @media screen and (min-width: 768px){
 #board{
