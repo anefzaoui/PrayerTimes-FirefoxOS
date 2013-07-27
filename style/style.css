@@ -145,10 +145,8 @@ width:100%;
 
 #searchPlaces{
 display:inline-block;
-width:calc(100% - 8rem);
-margin:0 auto;
-border:1px solid rgb(190,190,190);
-border-radius:2px 2px 2px 2px;
+width:99%;
+margin:.5rem auto;
 height:3rem;
 color:rgb(110,110,110);
 }
@@ -161,8 +159,31 @@ border:1px solid white;
 border-radius:0 0 0 0;
 height:3rem;
 }
-
-#pack-button{
+.SearchResults{
+display:block;
+margin:1rem auto;
+width:99%;
+}
+.SearchResults>.item{
+display:block;
+margin:auto;
+width:99%;
+padding:.5rem 0;
+color:rgb(45,45,45);
+border-bottom:1px solid rgb(220,220,220);
+background-color:white;
+}
+.SearchResults>.item>h1{
+font-size:1.4rem;
+width:calc(100% - 2rem);
+margin:0 auto;
+}
+.SearchResults>.item>h2{
+font-size:1.3rem;
+width:calc(100% - 2rem);
+margin:0 auto;
+}
+.pack-button{
 border-bottom: .4rem solid rgb(27, 115, 179);
 background-color: rgb(62, 155, 222);
 text-align: center;
@@ -173,7 +194,7 @@ color:white;
 text-decoration:none;
 font-size:1.2rem;
 }
-#pack-button:active{
+.pack-button:active{
 border-bottom: .1rem solid #1b73b3;
 }
 
@@ -186,6 +207,17 @@ border-bottom: .1rem solid #1b73b3;
     }
 	
 	/* Settings panel*/
+	.pack-plain-button{
+//border-bottom: .4rem solid rgb(27, 115, 179);
+background-color: rgb(62, 155, 222);
+text-align: center;
+padding-top: 1rem;
+padding-bottom: 1rem;
+display:block;
+color:white;
+text-decoration:none;
+font-size:1.2rem;
+}
 #mysettings{
 z-index:2;
 }
@@ -211,6 +243,10 @@ font-size:1.5rem;
 color:rgb(45,45,45);
 display:block;
 margin:0 0 1.5rem 0;
+}
+#about-info{
+margin:1rem auto;
+font-size:1.5rem;
 }
 	
 	/* tablet view */

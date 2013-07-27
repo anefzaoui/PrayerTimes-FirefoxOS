@@ -13,19 +13,20 @@ openSettingsWindow : function(){
 	+'<h1>Settings</h1>'
 	+'</header>'
 	+'<div class="Largeboard" id="Largeboard">'
-	/*
-	+'<div id="searchForm">'
-	+'<input type="text" id="searchPlaces"/>'
-	+'<input type="button" id="searchMe" value="Search"/>'
-	+'</div>'
-	*/
 	+'<div id="coordinations-container">'
 	+'<b>Your current location information:</b><br/>'
 	+'Latitude : ' + '<span id="latt">' +LocalData.getData("latitude") +'</span>'
 	+'<br/>'
 	+'Longitude : ' + '<span id="longi">' +LocalData.getData("longitude") +'</span>'
 	+'</div>'
-	+'<div id="search-location-container"><a id="pack-button" href="#">Change location</a></div>'
+	+'<div id="search-location-container"><a id="openSearchWindowButton" class="pack-button" href="#">Change location</a></div>'
+	+'<div id="about-info"><br/>'
+	+'This App uses GeoNames public data while searching for cities.'
+	+'<br/>'
+	+'Prayer Times Calculations are based on the prayertimes.org source code.'
+	+'<br/><br/>'
+	+'<a id="version-number" class="pack-plain-button">Version '+info.version+'</a>'
+	+'</div>'
 	+'</div>'
 	+'</section>';
 
@@ -45,10 +46,16 @@ backToMain : function(){
 	document.getElementById('mysettings').classList.remove("OpenPostAnim");
 	setTimeout(function() {
 		settings.remove('mysettings');
+		PT.calculate();
+		document.getElementById('refresh').addEventListener('click',function refrsh__(){
+		document.getElementById('refresh').addEventListener('click',refrsh__);
+		PT.refresh();
+		});
 		document.getElementById('settingsWindow').addEventListener('click',function openSettings(){
 		document.getElementById('settingsWindow').removeEventListener('click', openSettings);
 		settings.openSettingsWindow();
 		});
+		
 	}, 900);
 },
 
@@ -62,8 +69,18 @@ openLocationWindow : function(){
 	+'<h1>Search for Location</h1>'
 	+'</header>'
 	+'<div class="Largeboard" id="Largeboard">'
+
+	+'<div id="searchForm">'
+	+'<input type="text" id="searchPlaces"/>'
+	+'<a id="searchLocationButton" class="pack-button" href="#">Search location</a>'
+	+'</div>'
+	+'<div class="SearchResults" id="SearchResults"></div>'
 	+'</div>'
 	+'</section>';
+	document.getElementById('searchLocationButton').addEventListener('click', function initsearch(){
+	//document.getElementById('searchLocationButton').removeEventListener('click',initsearch);
+	Loc.init();
+	});
 	document.getElementById('backToSettingsWindow').addEventListener('click', function backSettings(){
 	document.getElementById('backToSettingsWindow').removeEventListener('click',backSettings);
 	settings.backToSettings();

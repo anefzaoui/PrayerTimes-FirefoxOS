@@ -3,13 +3,18 @@
 <head>
 <title>Prayer Times</title>
 <meta charset="utf-8">
+
+<!-- JS -->
+<script type="text/javascript" src="js/info.js"></script> 
+<script type="text/javascript" src="js/setLocation.js"></script> 
 <script type="text/javascript" src="js/PrayTimes.js"></script> 
 <script type="text/javascript" src="js/settings.js"></script> 
 <script type="text/javascript" src="js/utils.js"></script>
 <script type="text/javascript" src="js/local_data.js"></script>
-<link rel="stylesheet" href="style/style.css">
-<link rel="stylesheet" href="style/fonts/sahlnaskh.css">
 
+<!-- Styles -->
+<link rel="stylesheet" href="style/style.css">
+<!-- <link rel="stylesheet" href="style/fonts/sahlnaskh.css"> will not be used as long as we don't support arabic, yet -->
 <link href="shared/style_unstable/toolbars.css" rel="stylesheet" type="text/css">
 <link href="shared/fonts.css" rel="stylesheet" type="text/css">
 
@@ -23,7 +28,7 @@
 
 <div class="board" id="board">
 <div class="now" id="now"></div>
-<div id="timer">{h} hour and {m} minutes for Asr</div>
+<!--<div id="timer">{h} hour and {m} minutes for Asr</div>-->
 <div class="item" id="item">
 <div id="name">Fajr</div>
 <div class="time" id="fajr">00:00</div>
@@ -56,7 +61,7 @@
     <li><button id="refresh" class="pack-icon-gps">Locate</button></li>
   </ul>
   <ul>
-    <li><button class="pack-icon-menu">menu</button></li>
+    <!--<li><button class="pack-icon-menu">menu</button></li>-->
   </ul>
 </div>
 </section>

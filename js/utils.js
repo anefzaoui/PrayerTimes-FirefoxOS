@@ -47,6 +47,7 @@ var PT = {
 		document.getElementById('asr').innerHTML = this.times['asr'];
 		document.getElementById('maghrib').innerHTML = this.times['maghrib'];
 		document.getElementById('isha').innerHTML = this.times['isha'];
+		
 		}
 		else{
 		PT.refresh();
@@ -81,7 +82,8 @@ var PT = {
 	
 	window.addEventListener('load', function readerOnLoad(evt) {
 	window.removeEventListener('load', readerOnLoad);
-	document.getElementById('refresh').addEventListener('click',function(){
+	document.getElementById('refresh').addEventListener('click',function rfrsh__(){
+	document.getElementById('refresh').addEventListener('click',rfrsh__);
 		PT.refresh();
 	});
 	
@@ -92,5 +94,9 @@ var PT = {
 	
 	
 	
-	PT.calculate();  
+	PT.calculate();
+	window.setInterval(function(){
+	PT.calculate;
+	console.log("calculating...");
+	}, 3600000);	
 	});
