@@ -20,6 +20,8 @@ openSettingsWindow : function(){
 	+'Longitude : ' + '<span id="longi">' +LocalData.getData("longitude") +'</span>'
 	+'</div>'
 	+'<div id="search-location-container"><a id="openSearchWindowButton" class="pack-button" href="#">Change location</a></div>'
+	+'<br/>'
+	+'<div id="sound-container"><a id="openSalatWindowButton" class="pack-button" href="#">Sound and notifications</a></div>'
 	+'<div id="about-info"><br/>'
 	+'This App uses GeoNames public data while searching for cities.'
 	+'<br/>'
@@ -37,6 +39,10 @@ openSettingsWindow : function(){
 	document.getElementById('search-location-container').addEventListener('click', function backMain(){
 	document.getElementById('search-location-container').removeEventListener('click',backMain);
 	settings.openLocationWindow();
+	});
+	document.getElementById('sound-container').addEventListener('click', function back2Main(){
+	document.getElementById('sound-container').removeEventListener('click',back2Main);
+	settings.openSoundWindow();
 	});
 
 },
@@ -97,6 +103,10 @@ backToSettings : function(){
 	document.getElementById('search-location-container').removeEventListener('click', openLocationSettings);
 	settings.openLocationWindow();
 	});
+	document.getElementById('sound-container').addEventListener('click', function back2Main(){
+	document.getElementById('sound-container').removeEventListener('click',back2Main);
+	settings.openSoundWindow();
+	});
 	document.getElementById('backToMainWindow').addEventListener('click', function backMain(){
 	document.getElementById('backToMainWindow').removeEventListener('click',backMain);
 	settings.backToMain();
@@ -104,6 +114,77 @@ backToSettings : function(){
 	}, 900);
 },
 
+openSoundWindow : function(){
+document.getElementById("Roots").innerHTML+=''
+	+'<section class="OpenPostAnim" id="sound-window">'
+	+'<header>'
+	+'<a class="back" id="backToSettingsWindow_" href="#"></a>'
+	+'<h1>Sound and notifications</h1>'
+	+'</header>'
+	+'<div class="Largeboard" id="Largeboard">'
++'<h2>Get notification for: </h2>'
++'<label class="pack-switch"><input id="sp" type="checkbox"><span></span></label><span id="sltlbl">Sobh Prayer</span><br/>'
++'<label class="pack-switch"><input id="dp" type="checkbox"><span></span></label><span id="sltlbl">Dhuhr Prayer</span><br/>'
++'<label class="pack-switch"><input id="ap" type="checkbox"><span></span></label><span id="sltlbl">Asr Prayer</span><br/>'
++'<label class="pack-switch"><input id="mp" type="checkbox"><span></span></label><span id="sltlbl">Maghreb Prayer</span><br/>'
++'<label class="pack-switch"><input id="ip" type="checkbox"><span></span></label><span id="sltlbl">Isha Prayer</span><br/>'
++'<br/>'
++'<h2>Get notifications before minutes of the prayer?</h2>'
++'<select style="z-index:5;">'
+  +'<option>5 minutes</option>'
+  +'<option>10 minutes</option>'
+  +'<option>15 minutes</option>'
+  +'<option>20 minutes</option>'
+  +'<option>25 minutes</option>'
+  +'<option>30 minutes</option>'
++'</select>'
+
+	+'</div>'
+	+'</section>';
+	document.getElementById('backToSettingsWindow_').addEventListener('click', function back2Settings(){
+	document.getElementById('backToSettingsWindow_').removeEventListener('click',back2Settings);
+	settings.backToSettings__();
+	});
+},
+
+
+backToSettings__ : function(){
+	document.getElementById('sound-window').classList.add("ClosePostAnim");
+	document.getElementById('sound-window').classList.remove("OpenPostAnim");
+	setTimeout(function() {
+	settings.refreshSettings();
+	settings.remove('sound-window');
+	document.getElementById('search-location-container').addEventListener('click',function openLocationSettings(){
+	document.getElementById('search-location-container').removeEventListener('click', openLocationSettings);
+	settings.openLocationWindow();
+	});
+	document.getElementById('sound-container').addEventListener('click',function openSdSettings(){
+	document.getElementById('sound-container').removeEventListener('click', openSdSettings);
+	settings.openSoundWindow();
+	});
+	document.getElementById('backToMainWindow').addEventListener('click', function back2Main(){
+	document.getElementById('backToMainWindow').removeEventListener('click',back2Main);
+	settings.backToMain();
+	});
+	}, 900);
+},
+
+
+
+
+
+
+checkAndSetSize : function(){
+var originSize = document.getElementById('location-window').clientHeight;
+var SearchBoxSize = document.getElementById('SearchResults').clientHeight;
+if((originSize-180)<=SearchBoxSize){
+document.getElementById('location-window').style.height = SearchBoxSize + 180 + "px";
+}
+else if(originSize>SearchBoxSize){
+document.getElementById('location-window').style.height = "100%";
+}
+
+},
 refreshSettings : function(){
 	document.getElementById('latt').innerHTML = LocalData.getData("latitude");
 	document.getElementById('longi').innerHTML = LocalData.getData("longitude")

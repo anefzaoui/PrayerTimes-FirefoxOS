@@ -1,0 +1,6 @@
+SalatMoazen : 
+
+
+SobhNotification : 0 | 1
+SobhNotificationBefore : TIME
+SobhAzan : 0 | 1

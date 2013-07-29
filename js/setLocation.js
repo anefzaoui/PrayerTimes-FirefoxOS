@@ -33,6 +33,7 @@ Loc.saveOption();
 });
 }
 settings.remove('loadingLoading');
+settings.checkAndSetSize();
 },
 
 setOption : function(obj){

@@ -1,15 +1,16 @@
 ﻿{
-  "name": "Prayer Times",
+  "name": "T.Prayer Times",
   "description": "Prayer Times for Muslims.",
   "launch_path": "/index.html",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "icons": {
     "60": "/style/icons/set2/icon60.png",
 	"128": "/style/icons/set2/icon128.png",
 	"256": "/style/icons/set2/icon256.png"
   },
   "permissions": {
-    "geolocation":{"description":"Obtain the current location of the user to use it in calculating the prayer times."}
+    "geolocation":{"description":"Obtain the current location of the user to use it in calculating the prayer times."},
+	 "desktop-notification":{}
   },
   "developer": {
     "name": "Ahmed Nefzaoui",

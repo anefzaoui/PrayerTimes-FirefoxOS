@@ -108,11 +108,11 @@ margin:8rem auto 0 auto;
 text-shadow: 0px 0px 2px rgb(238, 238, 238);
 }
 #board>#item{
-text-shadow: 0px 0px 2px rgb(238, 238, 238);
 display:block;
 margin:1rem auto;
 min-height:4rem;
 background-color:white;
+box-shadow:0 2px 4px rgba(0,0,0,0.1);
 }
 #board>#item>#name{
 float:left;
@@ -223,6 +223,13 @@ z-index:2;
 }
 #location-window{
 z-index:3;
+}
+#sound-window{
+z-index:4;
+}
+#sltlbl{
+font-size:1.4rem;
+margin-left:1rem;
 }
 #Largeboard{
 width:calc(100% - 3rem);
