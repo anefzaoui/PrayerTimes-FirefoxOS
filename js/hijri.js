@@ -1,4 +1,3 @@
-
 function intPart(floatNum){
 if (floatNum< -0.0000001){
 	 return Math.ceil(floatNum-0.0000001)
