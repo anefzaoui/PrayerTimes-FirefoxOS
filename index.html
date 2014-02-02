@@ -1,76 +1,107 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Prayer Times</title>
-<meta charset="utf-8">
-
-<!-- JS -->
-<script type="text/javascript" src="js/utils.js"></script>
-<script type="text/javascript" src="js/info.js"></script> 
-<script type="text/javascript" src="js/setLocation.js"></script> 
-<script type="text/javascript" src="js/PrayTimes.js"></script> 
-<script type="text/javascript" src="js/settings.js"></script> 
-<script type="text/javascript" src="js/local_data.js"></script>
-<script type="text/javascript" src="js/notify.js"></script>
-<!-- Styles -->
-<link rel="stylesheet" href="style/style.css">
-<!-- <link rel="stylesheet" href="style/fonts/sahlnaskh.css"> will not be used as long as we don't support arabic, yet -->
-<link href="shared/style_unstable/toolbars.css" rel="stylesheet" type="text/css">
-<link href="shared/style/switches.css" rel="stylesheet" type="text/css">
-<link href="shared/fonts.css" rel="stylesheet" type="text/css">
-
+  <title>Prayer Times</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+  
+  <!-- Styles -->
+  <link href="style/style.css" rel="stylesheet" type="text/css">
+  <link href="style/buttons.css" rel="stylesheet" type="text/css">
+  <link href="style/LazyLoader.css" rel="stylesheet" type="text/css">
+  
+  <link href="shared/style/toolbars.css" rel="stylesheet" type="text/css">
+  <link href="shared/style/switches.css" rel="stylesheet" type="text/css">
+  <link href="shared/style/headers.css" rel="stylesheet" type="text/css">
 </head>
 <body id="Roots" role="application">
-<section id="main">
-<header>
-<div class="menu"><a id="settingsWindow" href="#"></a></div>
-<h1>Prayer Times</h1>
-</header>
-
-<div class="board" id="board">
-<div class="now" id="now"></div>
-<!--<div id="timer">{h} hour and {m} minutes for Asr</div>-->
-<div class="item" id="item">
-<div id="name">Fajr</div>
-<div class="time" id="fajr">00:00</div>
-</div>
-
-<div class="item" id="item">
-<div id="name">Dhuhr</div>
-<div class="time" id="dhuhr">00:00</div>
-</div>
-
-<div class="item" id="item">
-<div id="name">Asr</div>
-<div class="time" id="asr">00:00</div>
-</div>
-
-<div class="item" id="item">
-<div id="name">Maghreb</div>
-<div class="time" id="maghrib">00:00</div>
-</div>
-
-<div class="item" id="item">
-<div id="name">Isha'a</div>
-<div class="time" id="isha">00:00</div>
-</div>
-
-
-</div>
-<div role="toolbar">
-  <ul>
-    <li><button id="refresh" class="pack-icon-gps">Locate</button></li>
-  </ul>
-  <ul>
-    <li><button onclick="" class="pack-icon-menu">menu</button></li>
-  </ul>
-</div>
-</section>
-<!--<section id="settings">
-<header>
-<a class="back" href="#"></a>
-<h1>Settings</h1>
-</header>
-</section>-->
+  
+  <section role="region" class="skin-dark" id="settingsPanel">
+    <header>
+      <a id="rootBtn" href="#root"><span class="icon icon-back">settings</span></a>
+      <h1>Settings</h1>
+    </header>
+    <div class="board">
+    <header>
+      <h2>Sound management</h2>
+    </header>
+    <ul>
+      <li>
+        <label class="pack-switch">
+          <input name="notifications.enabled" class="uninit" type="checkbox">
+          <span id="menuItem-ntf" class="menu-item" data-l10n-id="notifications">Notifications</span>
+        </label>
+      </li>
+      <li>
+        <small id="notifications-details" class="menu-item-desc"></small>
+        <a id="notificationsBtn" class="menu-item" href="#notificationsPanel" data-l10n-id="manage-notifications">Manage notifications</a>
+      </li>
+      <li>
+        <label class="pack-switch">
+          <input name="azan.enabled" class="uninit" type="checkbox">
+          <span id="menuItem-azan" class="menu-item" data-l10n-id="azan">Azan Sound</span>
+        </label>
+      </li>
+      <li>
+        <small id="aazan-details" class="menu-item-desc"></small>
+        <a id="azanBtn" class="menu-item" href="#azanPanel" data-l10n-id="manage-azan">Manage azan sound</a>
+      </li>
+    </ul>
+    <header>
+      <h2>Location and Time</h2>
+    </header>
+    <ul>
+      <li>
+          <small id="location-details" class="menu-item-desc"></small>
+          <a id="locationBtn" class="menu-item" href="#locationPanel" data-l10n-id="manage-location">Manage my location</a>
+      </li>
+    </ul>
+    <header>
+      <h2>Rights and Legal</h2>
+    </header>
+    <ul>
+      <li>
+          <small id="about-details" class="menu-item-desc"></small>
+          <a id="aboutBtn" class="menu-item" href="#aboutPanel" data-l10n-id="manage-about">About this app</a>
+      </li>
+      <li>
+          <small id="rights-details" class="menu-item-desc"></small>
+          <a id="rightsBtn" class="menu-item" href="#rightsPanel" data-l10n-id="manage-rights">Rights and legal</a>
+      </li>
+      <li>
+          <small id="developer-details" class="menu-item-desc"></small>
+          <a id="developerBtn" class="menu-item" href="#developerPanel" data-l10n-id="manage-developer">About developer</a>
+      </li>
+    </ul>
+    </div>
+  </section>
+  
+  <section class="skin-dark current" role="region" id="root">
+    <header>
+      <menu type="toolbar">
+        <a id="settingsBtn" href="#settings"><span class="icon icon-settings">Settings</span></a>
+      </menu>
+      <h1>Prayer times</h1>
+    </header>
+    <header>
+      <h2>Prayers</h2>
+    </header>
+    <div class="board" id="board">
+    </div>
+    <div role="toolbar">
+      <ul>
+        <li><button id="gps" class="pack-icon-gps">Locate</button></li>
+      </ul>
+      <ul>
+        <li><button class="pack-icon-menu">menu</button></li>
+      </ul>
+    </div>
+  </section>
+  
+  <!-- JS -->
+  <script type="text/javascript" src="javascript/PrayTimes.js"></script>
+  <script type="text/javascript" src="javascript/utils.js"></script>
+  <script type="text/javascript" src="javascript/notification_manager.js"></script>
+  <script type="text/javascript" src="javascript/LazyLoader.js"></script>
 </body>
 </html>

@@ -1,0 +1,51 @@
+section[role="region"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  overflow: hidden;
+}
+
+section[role="region"] {
+  transform: translateX(+100%);
+  transition: transform .4s ease;
+}
+
+section[role="region"].previous {
+  transform: translateX(-100%);
+}
+
+section[role="region"].current {
+  transform: translateX(0);
+}
+
+section[role="region"].forwward {
+  transform: translateX(+100%);
+}
+
+#root{
+	z-index:1;
+}
+
+#settingsPanel{
+	z-index:2;
+}
+
+section[role="region"] > header {
+  position: absolute;
+  width:100%;
+}
+
+section[role="region"] > div.board {
+  position: absolute;
+  top: 5rem;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 5rem);
+  overflow-y: scroll;
+  will-change: scroll-position;
+}

@@ -1,22 +1,26 @@
-﻿{
-  "name": "T.Prayer Times",
-  "description": "Prayer Times for Muslims.",
+{
+  "name": "Prayer Times",
+  "description": "Prayer Times",
   "launch_path": "/index.html",
-  "version": "0.0.2",
+  "type": "privileged",
+  "version": "0.0.3",
   "icons": {
     "60": "/style/icons/set2/icon60.png",
-	"128": "/style/icons/set2/icon128.png",
-	"256": "/style/icons/set2/icon256.png"
+    "90": "/style/icons/set2/icon90.png",
+    "120": "/style/icons/set2/icon120.png",
+    "128": "/style/icons/set2/icon128.png",
+    "256": "/style/icons/set2/icon256.png"
   },
   "permissions": {
-    "geolocation":{"description":"Obtain the current location of the user to use it in calculating the prayer times."},
-	 "desktop-notification":{}
+    "geolocation": {},
+    "audio-channel-notification": {},
+    "systemXHR": {},
+    "desktop-notification": {}
   },
   "developer": {
     "name": "Ahmed Nefzaoui",
-    "url": "http://nefzaoui.com"
+    "url": "http://anefzaoui.blogspot.com"
   },
-  
   "default_locale": "en",
   "orientation": "portrait-primary"
 }
